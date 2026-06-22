@@ -1,6 +1,6 @@
 cask "tokenomics" do
-  version "2.8.7"
-  sha256 "d9ca1007602ba536d4221b5e15be0b186b5b81c57954455625a4588b31826d53"
+  version "2.9.0"
+  sha256 "d80e818ab8034b19f3ec8de743b5ae8a884cb8e7284a9564a6cb78ad6aee62ce"
 
   url "https://trytokenomics.com/download/dmg/v#{version}",
       verified: "trytokenomics.com/download/"
@@ -19,12 +19,26 @@ cask "tokenomics" do
 
   app "Tokenomics.app"
 
-  uninstall quit: "com.robstout.tokenomics"
+  uninstall quit:       "com.robstout.tokenomics",
+            login_item: "Tokenomics"
 
   zap trash: [
     "~/Library/Application Support/Tokenomics",
     "~/Library/Caches/com.robstout.tokenomics",
+    "~/Library/Containers/com.robstout.tokenomics",
+    "~/Library/Containers/com.robstout.tokenomics.widgets",
+    "~/Library/Group Containers/group.com.robstout.tokenomics",
+    "~/Library/HTTPStorages/com.robstout.tokenomics",
     "~/Library/Preferences/com.robstout.tokenomics.plist",
+    "~/Library/Logs/Tokenomics",
+    "~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/Google/Chrome Beta/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/Google/Chrome Canary/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/BraveSoftware/Brave-Browser/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/Vivaldi/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/com.operasoftware.Opera/NativeMessagingHosts/com.tokenomics.bridge.json",
+    "~/Library/Application Support/Arc/NativeMessagingHosts/com.tokenomics.bridge.json",
   ]
 
   caveats <<~EOS
